@@ -1,7 +1,7 @@
-import CardList from "./components/CardList";
-import CardSingle from "./components/CardList/CardSingle";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import CardList from "../components/CardList";
+import CardSingle from "../components/CardList/CardSingle";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Home = async () => {
   const responseAnime = await fetch(
