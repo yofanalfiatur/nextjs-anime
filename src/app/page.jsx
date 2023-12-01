@@ -1,7 +1,5 @@
 import CardList from "../components/CardList";
 import CardSingle from "../components/CardList/CardSingle";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 const Home = async () => {
   const responseAnime = await fetch(
@@ -16,34 +14,30 @@ const Home = async () => {
 
   return (
     <>
-      <Header />
-      <main>
-        <CardList titlePage="Top Anime" id="anime">
-          {topAnime.data.map((topAnime) => {
-            return (
-              <CardSingle
-                key={topAnime.mal_id}
-                image={topAnime.images.jpg.image_url}
-                title={topAnime.title}
-                score={topAnime.score}
-              />
-            );
-          })}
-        </CardList>
-        <CardList titlePage="Top Manga" id="manga">
-          {topManga.data.map((topManga) => {
-            return (
-              <CardSingle
-                key={topManga.mal_id}
-                image={topManga.images.jpg.image_url}
-                title={topManga.title}
-                score={topManga.score}
-              />
-            );
-          })}
-        </CardList>
-      </main>
-      <Footer />
+      <CardList titlePage="Top Anime" info="Lihat Semua" id="anime">
+        {topAnime.data.map((topAnime) => {
+          return (
+            <CardSingle
+              key={topAnime.mal_id}
+              image={topAnime.images.jpg.image_url}
+              title={topAnime.title}
+              score={topAnime.score}
+            />
+          );
+        })}
+      </CardList>
+      <CardList titlePage="Top Manga" info="Lihat Semua" id="manga">
+        {topManga.data.map((topManga) => {
+          return (
+            <CardSingle
+              key={topManga.mal_id}
+              image={topManga.images.jpg.image_url}
+              title={topManga.title}
+              score={topManga.score}
+            />
+          );
+        })}
+      </CardList>
     </>
   );
 };
