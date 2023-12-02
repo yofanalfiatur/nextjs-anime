@@ -10,7 +10,7 @@ const Search = async ({ params }) => {
   const dataSearch = await response.json();
   return (
     <>
-      <CardList titlePage="Top Anime" id="search">
+      <CardList titlePage={`Hasil Pencarian : ${keyword}`} id="search">
         {dataSearch.data.map((dataSearch) => {
           return (
             <CardSingle

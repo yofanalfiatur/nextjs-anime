@@ -6,7 +6,7 @@ const nextConfig = {
         hostname: "cdn.myanimelist.net",
       },
       {
-        hostname: "unsplash.com",
+        hostname: "placehold.co",
       },
     ],
   },

@@ -6,7 +6,7 @@ const CardList = (props) => {
     <>
       <section id={id} className="wrapper container mx-auto w-full py-8">
         <div className="flex flex-row justify-between items-center my-4">
-          <TitlePage> {titlePage}</TitlePage>
+          {titlePage && <TitlePage> {titlePage}</TitlePage>}
           {info && (
             <Link href="#" className="hover:text-sky-400 ">
               {info}

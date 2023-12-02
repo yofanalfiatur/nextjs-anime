@@ -12,7 +12,9 @@ const Header = () => {
               ANIMEK
             </Link>
           </div>
-          <div className="menu flex flex-row justify-between items-center gap-8">
+
+          {/* Menu Dekstop  */}
+          <div className="menu hidden md:flex flex-row justify-between items-center gap-8 ">
             <ul className="flex flex-row gap-4">
               <li className="flex">
                 <a href={`/#anime`} className="w-full py-6 hover:text-sky-400">
@@ -33,6 +35,9 @@ const Header = () => {
             <InputSearch />
             <ToggleSwitch />
           </div>
+
+          {/* Menu Mobile  */}
+          <div className="md:hidden"></div>
         </div>
       </header>
     </>
