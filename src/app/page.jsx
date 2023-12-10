@@ -14,7 +14,7 @@ const Home = async () => {
 
   return (
     <>
-      <CardList titlePage="Top Anime" info="Lihat Semua" id="anime">
+      <CardList titlePage="Top Anime" info="Lihat Semua" infoLink="/top-anime" id="anime">
         {topAnime.data.map((topAnime) => {
           return (
             <CardSingle
@@ -26,7 +26,8 @@ const Home = async () => {
           );
         })}
       </CardList>
-      <CardList titlePage="Top Manga" info="Lihat Semua" id="manga">
+      
+      <CardList titlePage="Top Manga" info="Lihat Semua" infoLink="/top-manga" id="manga">
         {topManga.data.map((topManga) => {
           return (
             <CardSingle

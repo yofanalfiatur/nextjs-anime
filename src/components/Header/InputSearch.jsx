@@ -9,9 +9,13 @@ const InputSearch = () => {
   const router = useRouter();
 
   const handleSearch = (e) => {
+    const keyword = searchRef.current.value;
+
+    //untuk memberikan validasi ketika input kosong atau kurang dari 2 character
+    if (!keyword || keyword.length < 2) return;
+
     if (e.key === "Enter" || e.type === "click") {
       e.preventDefault();
-      const keyword = searchRef.current.value;
       router.push(`/search/${keyword}`);
     }
   };

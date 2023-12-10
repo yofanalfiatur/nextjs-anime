@@ -1,14 +1,14 @@
 import Link from "next/link";
 import TitlePage from "./TitlePage";
 const CardList = (props) => {
-  const { children, titlePage, info, id } = props;
+  const { children, titlePage, info, infoLink, id } = props;
   return (
     <>
       <section id={id} className="wrapper container mx-auto w-full py-8">
         <div className="flex flex-row justify-between items-center my-4">
           {titlePage && <TitlePage> {titlePage}</TitlePage>}
           {info && (
-            <Link href="#" className="hover:text-sky-400 ">
+            <Link href={infoLink} className="hover:text-sky-400 ">
               {info}
             </Link>
           )}

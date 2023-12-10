@@ -3,6 +3,7 @@ import CardSingle from "@/components/CardList/CardSingle";
 
 const Search = async ({ params }) => {
   const { keyword } = params;
+  const decodeKeyword = decodeURIComponent(keyword);
 
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${keyword}&limit=10`
@@ -10,7 +11,7 @@ const Search = async ({ params }) => {
   const dataSearch = await response.json();
   return (
     <>
-      <CardList titlePage={`Hasil Pencarian : ${keyword}`} id="search">
+      <CardList titlePage={`Hasil Pencarian : ${decodeKeyword}`} id="search">
         {dataSearch.data.map((dataSearch) => {
           return (
             <CardSingle
