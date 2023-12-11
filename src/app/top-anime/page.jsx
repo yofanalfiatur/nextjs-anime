@@ -36,7 +36,11 @@ const Anime = () => {
           );
         })}
       </CardList>
-      <Pagination />
+      <Pagination
+        page={page}
+        lastPage={topAnime.pagination?.last_visible_page}
+        setPage={setPage}
+      />
     </>
   );
 };
