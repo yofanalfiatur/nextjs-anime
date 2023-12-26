@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CardSingle = (props) => {
-  const { image, title, score } = props;
+  const { id, image, title, score } = props;
   return (
     <>
       <Link
-        href="#"
+        href={`/detail/${id}`}
         className="card flex flex-col gap-y-1 bg-gray-200  rounded-md hover:shadow-xl hover:bg-slate-200 relative overflow-hidden dark:bg-slate-500 dark:hover:bg-slate-400"
       >
         <Image

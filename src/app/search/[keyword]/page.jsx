@@ -16,6 +16,7 @@ const Search = async ({ params }) => {
           return (
             <CardSingle
               key={dataSearch.mal_id}
+              id={dataSearch.mal_id}
               image={dataSearch.images.jpg.image_url}
               title={dataSearch.title}
               score={dataSearch.score}

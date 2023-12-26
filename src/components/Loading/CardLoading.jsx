@@ -7,7 +7,7 @@ const CardLoading = () => {
     <>
       <Link
         href="#"
-        className="card flex flex-col gap-y-1 bg-gray-200  rounded-md hover:shadow-xl hover:bg-slate-200 relative overflow-hidden dark:bg-slate-500 dark:hover:bg-slate-400"
+        className="card animate-pulse flex flex-col gap-y-1 bg-gray-200  rounded-md hover:shadow-xl hover:bg-slate-200 relative overflow-hidden dark:bg-slate-500 dark:hover:bg-slate-400"
       >
         <Image
           src="https://placehold.co/300x400/jpg"

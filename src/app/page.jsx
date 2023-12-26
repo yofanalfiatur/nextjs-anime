@@ -14,11 +14,17 @@ const Home = async () => {
 
   return (
     <>
-      <CardList titlePage="Top Anime" info="Lihat Semua" infoLink="/top-anime" id="anime">
+      <CardList
+        titlePage="Top Anime"
+        info="Lihat Semua"
+        infoLink="/top-anime"
+        id="anime"
+      >
         {topAnime.data.map((topAnime) => {
           return (
             <CardSingle
               key={topAnime.mal_id}
+              id={topAnime.mal_id}
               image={topAnime.images.jpg.image_url}
               title={topAnime.title}
               score={topAnime.score}
@@ -26,12 +32,18 @@ const Home = async () => {
           );
         })}
       </CardList>
-      
-      <CardList titlePage="Top Manga" info="Lihat Semua" infoLink="/top-manga" id="manga">
+
+      <CardList
+        titlePage="Top Manga"
+        info="Lihat Semua"
+        infoLink="/top-manga"
+        id="manga"
+      >
         {topManga.data.map((topManga) => {
           return (
             <CardSingle
               key={topManga.mal_id}
+              id={topManga.mal_id}
               image={topManga.images.jpg.image_url}
               title={topManga.title}
               score={topManga.score}
