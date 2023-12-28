@@ -12,7 +12,7 @@ const InputSearch = () => {
     const keyword = searchRef.current.value;
 
     //untuk memberikan validasi ketika input kosong atau kurang dari 2 character
-    if (!keyword || keyword.length < 2) return;
+    if (!keyword || keyword.length < 2 || keyword.trim() === "") return;
 
     if (e.key === "Enter" || e.type === "click") {
       e.preventDefault();

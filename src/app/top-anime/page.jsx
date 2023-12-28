@@ -5,6 +5,7 @@ import BannerSection from "@/components/BannerSection";
 import CardSingle from "@/components/CardList/CardSingle";
 import Pagination from "@/components/Utilities/Pagination";
 import Loading from "@/components/Loading";
+import { getDataResponse } from "../../libs/api-libs";
 
 const Anime = () => {
   const [page, setPage] = useState(1);
@@ -14,10 +15,7 @@ const Anime = () => {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const responseAnime = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?page=${page}`
-      );
-      const data = await responseAnime.json();
+      const data = await getDataResponse("top/anime", `page=${page}`);
       setTopAnime(data);
     } finally {
       setIsLoading(false);
@@ -39,6 +37,7 @@ const Anime = () => {
           {topAnime.data?.map((topAnime) => (
             <CardSingle
               key={topAnime.mal_id}
+              href={`/detail/anime/${topAnime.mal_id}`}
               image={topAnime.images.jpg.image_url}
               title={topAnime.title}
               score={topAnime.score}

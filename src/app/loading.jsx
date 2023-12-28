@@ -4,7 +4,9 @@ import React from "react";
 const loading = () => {
   return (
     <>
-      <Loading />
+      <section className="container mx-auto flex justify-center py-40">
+        <div class="loader"></div>
+      </section>
     </>
   );
 };

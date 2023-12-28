@@ -1,16 +1,16 @@
-import CardList from "../components/CardList";
-import CardSingle from "../components/CardList/CardSingle";
+import CardList from "@/components/CardList";
+import CardSingle from "@/components/CardList/CardSingle";
+import { getDataResponse } from "@/libs/api-libs";
 
 const Home = async () => {
-  const responseAnime = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=10`
-  );
-  const topAnime = await responseAnime.json();
+  // const responseAnime = await fetch(
+  //   `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=10`
+  // );
+  // const topAnime = await responseAnime.json();
 
-  const responseManga = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/manga?limit=10`
-  );
-  const topManga = await responseManga.json();
+  const topAnime = await getDataResponse("top/anime", "limit=10");
+
+  const topManga = await getDataResponse("top/manga", "limit=10");
 
   return (
     <>
@@ -24,7 +24,7 @@ const Home = async () => {
           return (
             <CardSingle
               key={topAnime.mal_id}
-              id={topAnime.mal_id}
+              href={`/detail/anime/${topAnime.mal_id}`}
               image={topAnime.images.jpg.image_url}
               title={topAnime.title}
               score={topAnime.score}
@@ -43,7 +43,7 @@ const Home = async () => {
           return (
             <CardSingle
               key={topManga.mal_id}
-              id={topManga.mal_id}
+              href={`/detail/manga/${topManga.mal_id}`}
               image={topManga.images.jpg.image_url}
               title={topManga.title}
               score={topManga.score}

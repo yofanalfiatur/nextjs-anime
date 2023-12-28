@@ -1,10 +1,11 @@
 "use client";
 import BannerSection from "@/components/BannerSection";
 import CardList from "@/components/CardList";
-import CardSingle from "@/components/CardList/CardSingle";
 import Pagination from "@/components/Utilities/Pagination";
 import React, { useEffect, useState } from "react";
 import Loading from "@/components/Loading";
+import { getDataResponse } from "../../libs/api-libs";
+import CardSingle from "@/components/CardList/CardSingle";
 
 const TopManga = () => {
   const [page, setPage] = useState(1);
@@ -14,10 +15,7 @@ const TopManga = () => {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const responseManga = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/manga?page=${page}`
-      );
-      const data = await responseManga.json();
+      const data = await getDataResponse("top/manga", `page=${page}`);
       setTopManga(data);
     } finally {
       setIsLoading(false);
@@ -39,6 +37,7 @@ const TopManga = () => {
             return (
               <CardSingle
                 key={topManga.mal_id}
+                href={`/detail/manga/${topManga.mal_id}`}
                 image={topManga.images.jpg.image_url}
                 title={topManga.title}
                 score={topManga.score}
